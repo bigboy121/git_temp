@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1752901",
+      "name": "电源",
+      "font_class": "dianyuan",
+      "unicode": "e5ad",
+      "unicode_decimal": 58797
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+body{
+	background:black;
+	-webkit-transition:2s;
+}
+#btn{
+	color:#00ffe7;
+	text-shadow:0 0 15px #00a1ff;
+	border:2px solid #00ffe7;
+	background:#353b48;
+	-webkit-transition:1s;
+
+}
