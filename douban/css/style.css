@@ -24,3 +24,42 @@ hr {
     padding: 0;
     margin: 0;
 }
+
+.blog-sidebar .sidebar-module-inset {
+
+    background-color: #f2f7f6;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+.carousel .row .span3 {
+    display: block;
+    float: left;
+    width: 33.33%;
+    margin-left: 0;
+    box-sizing: border-box;
+}
+
+.popular {
+    margin-left: 15px;
+
+}
+
+.popular .thumbnail {
+    border: none;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+    -background-image: none;
+}
+.prev-sty,
+.next-sty{
+    color:#ccc;
+    opacity: 1;
+}
+.img-size{
+    max-width:270px;
+    max-height:383px;
+}

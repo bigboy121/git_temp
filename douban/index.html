@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--告诉别人你的数据交换的类型-->
+    <meta name="referrer" content="never">
     <title>豆瓣电影项目</title>
     <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -95,6 +97,60 @@
         </div>
     </div>
     <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 pull-left popular " id="searchRes">
+                <div class="page-header">
+                    <h5>正在热映</h5>
+                </div>
+                <div id="myCarousel2" class="carousel slide">
+                    <!--这里是轮播图-->
+                    <div class="carousel-inner">
+                    </div>
+                    <a class="left carousel-control prev-sty" href="#myCarousel2" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left glyphicon-small"></span>
+                    </a>
+
+                    <a class="right carousel-control next-sty" href="#myCarousel2" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right glyphicon-small"></span>
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 col-lg-offset-2 col-sm-12 col-xs-12 pull-left blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>简介</h4>
+                    <p>模仿豆瓣电影页面，利用豆瓣API<em>开放API</em>实现了页面的简单展示</p>
+                </div>
+                <div class="sidebar-module">
+                    <h4>TOP10电影</h4>
+                    <ol class="list-style" id="topTen">
+                        <!--调用接口出来的数据-->
+                        <li><a href="https://movie.douban.com/subject/2263430">肖申克的救赎</a></li>
+
+                        <li><a href="https://movie.douban.com/subject/1808117">霸王别姬</a></li>
+
+                        <li><a href="https://movie.douban.com/subject/1964454">阿甘正传</a></li>
+
+                        <li><a href="https://movie.douban.com/subject/2284996">这个杀手不太冷</a></li>
+
+                        <li><a href="https://movie.douban.com/subject/1031864">美丽人生</a></li>
+
+                        <li><a href="https://movie.douban.com/subject/1879285">泰坦尼克号</a></li>
+
+                        <li><a href="https://movie.douban.com/subject/1878174">千与千寻</a></li>
+
+                        <li><a href="https://movie.douban.com/subject/956696">辛德勒的名单</a></li>
+
+                        <li><a href="https://movie.douban.com/subject/1909868">盗梦空间</a></li>
+
+                        <li><a href="https://movie.douban.com/subject/1428426">忠犬八公的故事</a></li>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -106,6 +162,9 @@
 
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- <script src="https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b"></script> -->
+
 </body>
 
 </html>
