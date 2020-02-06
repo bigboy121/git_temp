@@ -56,13 +56,14 @@
             </div>
             <div class="col-lg-5 col-md-6 col-xs-6 pull-left">
                 <div class="input-group search-wrap">
-                    <input type="text" class="form-control" placeholder="电影、电视剧、艺人">
+                    <input id="search-input" type="text" class="form-control" placeholder="电影、电视剧、艺人">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
+                        <button class="btn btn-default" type="button" id="search-btn">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </span>
                 </div>
+                <div id="search-tip"></div>
             </div>
         </div>
     </div>
@@ -123,28 +124,9 @@
                     <p>模仿豆瓣电影页面，利用豆瓣API<em>开放API</em>实现了页面的简单展示</p>
                 </div>
                 <div class="sidebar-module">
-                    <h4>TOP10电影</h4>
+                    <h4>TOP20电影</h4>
                     <ol class="list-style" id="topTen">
                         <!--调用接口出来的数据-->
-                        <li><a href="https://movie.douban.com/subject/2263430">肖申克的救赎</a></li>
-
-                        <li><a href="https://movie.douban.com/subject/1808117">霸王别姬</a></li>
-
-                        <li><a href="https://movie.douban.com/subject/1964454">阿甘正传</a></li>
-
-                        <li><a href="https://movie.douban.com/subject/2284996">这个杀手不太冷</a></li>
-
-                        <li><a href="https://movie.douban.com/subject/1031864">美丽人生</a></li>
-
-                        <li><a href="https://movie.douban.com/subject/1879285">泰坦尼克号</a></li>
-
-                        <li><a href="https://movie.douban.com/subject/1878174">千与千寻</a></li>
-
-                        <li><a href="https://movie.douban.com/subject/956696">辛德勒的名单</a></li>
-
-                        <li><a href="https://movie.douban.com/subject/1909868">盗梦空间</a></li>
-
-                        <li><a href="https://movie.douban.com/subject/1428426">忠犬八公的故事</a></li>
 
                     </ol>
                 </div>

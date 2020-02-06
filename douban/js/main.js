@@ -31,7 +31,7 @@ function jsonp(url,arg,fn){
 
     //随机生成一个回调函数
     var funName = 'fun_' + Math.random().toString().substr(3);
-    console.log(funName);
+   // console.log(funName);
 
     //把传进来的回调函数挂载到window对象上面，可以全局使用
     window[funName] = fn;
@@ -52,6 +52,10 @@ function jsonp(url,arg,fn){
 
     //把得到的script标签添加到dom上面
     document.body.appendChild(srpt);
+
+    
+
+    
 }
 // jsonp('https://api.douban.com/v2/movie/in_theaters',{
 //     apikey:'0b2bdeda43b5688921839c8ecb20399b'
@@ -64,6 +68,7 @@ $(function(){
     jsonp('https://api.douban.com/v2/movie/in_theaters',{
         apikey:'0b2bdeda43b5688921839c8ecb20399b'
         },function(data){
+            
             var htmlStr = '';
             var res = data.subjects;
             res.forEach(function(item, index){
@@ -80,18 +85,20 @@ $(function(){
                 }
     
                 for (var per of item.casts) {
-                    console.log(per);
-                    if (per.avatars) {
+                   // console.log(per);
+                    if (per.avatars != 'null')  {
                         htmlStr += `
                         <!-- ITEM-->
                         <div class="span3">
                             <div class="thumbnail product-item">
-                                <a href="${per.alt}"><img
-                                        src="${per.avatars.medium}" class='img-size'></a>
+                                <a href="${per.alt}">
+                                    <img src="${per.avatars.medium}" class='img-size'>
+                                </a>
                             </div>
                             <h5>${per.name}</h5>
-                            <p><a href="${per.alt}" rol="button"
-                                    class="btn btn-primary btn-sm">查看详情 &gt;&gt;</a></p>
+                            <p>
+                                <a href="${per.alt}" rol="button" class="btn btn-primary btn-sm">查看详情 &gt;&gt;</a>
+                            </p>
                         </div>
                         <!-- ITEM-->
                         `;
@@ -108,6 +115,50 @@ $(function(){
             })
         }
     );
+
+    //获取TOP10电影的数据
+    jsonp('https://api.douban.com/v2/movie/top250',{
+        apikey:'0b2bdeda43b5688921839c8ecb20399b'
+    },function(data){
+        //console.log(data);
+        var htmlStr = '';
+        var rel = data.subjects;
+
+        for(var i=0;i<20;i++){
+            htmlStr += `
+                <li><a href="${rel[i].alt}">${rel[i].title}</a></li>
+            `;
+            $("#topTen").html(htmlStr);
+        }
+    });
+
+  
+    //执行搜索功能
+    $("#search-btn").click(function(){
+        var search_info = $("#search-input").val().trim();
+        var htmlStr = '';
+        if(search_info == ''){
+            alert('请输入查询内容！');
+        }else{
+            jsonp('https://api.douban.com/v2/movie/in_theaters',{
+                apikey:'0b2bdeda43b5688921839c8ecb20399b',
+            },function(data){
+          //  console.log(data);
+
+                //搜索组装页面
+                htmlStr += `
+                    <div style="color:red">豆瓣搜索接口不可用，请求失败！</div>
+                `;
+                $("#search-tip").html(htmlStr);
+            });
+        }
+    });
+
+
+
+
+
+
 })
 
 
